@@ -5,12 +5,14 @@ const searchBtn = document.getElementById('searchBtn');
 const weatherIcon = document.querySelector('.weather-icon');
 const weather = document.querySelector('.weather');
 const error = document.querySelector('.error');
+const paragraphError = document.querySelector('.error p');
 
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     
     if (response.status === 404) {
         error.style.display = 'block';
+        paragraphError.textContent = `Invalid city name "${searchBox.value.trim()}"`;
         weather.style.display = 'none';
 
     }
