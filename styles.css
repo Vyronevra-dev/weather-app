@@ -44,10 +44,14 @@ body {
     outline: none;
     background-color: #fff;
     border-radius: 50%;
-    width: 60px;
+    width: 48px;
     height: 48px;
     padding: 5px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .weather {
@@ -75,9 +79,9 @@ body {
 
 .details {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    justify-content: space-between;
+    padding: 10px 20px;
     margin-top: 50px;
 }
 
@@ -104,4 +108,24 @@ body {
     font-size: 14px;
     margin-top: 10px;
     display: none;
+}
+
+@media (max-width: 600px) {
+    .card {
+        margin: 30px auto 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .details {
+        width: 100%;
+        padding: 10px 0;
+    }
 }
